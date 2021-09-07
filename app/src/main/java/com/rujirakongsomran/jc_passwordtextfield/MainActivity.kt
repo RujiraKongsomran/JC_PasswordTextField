@@ -6,6 +6,7 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.*
 import androidx.compose.runtime.*
 import androidx.compose.runtime.saveable.rememberSaveable
@@ -13,6 +14,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
 import com.rujirakongsomran.jc_passwordtextfield.ui.theme.JC_PasswordTextFieldTheme
@@ -64,6 +66,9 @@ fun Greeting() {
                     )
                 }
             },
+            keyboardOptions = KeyboardOptions(
+                keyboardType = KeyboardType.Password
+            ),
             visualTransformation = if (passwordVisibility)
                 VisualTransformation.None
             else
