@@ -13,6 +13,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.input.PasswordVisualTransformation
+import androidx.compose.ui.text.input.VisualTransformation
 import com.rujirakongsomran.jc_passwordtextfield.ui.theme.JC_PasswordTextFieldTheme
 
 class MainActivity : ComponentActivity() {
@@ -61,7 +63,11 @@ fun Greeting() {
                         contentDescription = "Visibility Icon"
                     )
                 }
-            }
+            },
+            visualTransformation = if (passwordVisibility)
+                VisualTransformation.None
+            else
+                PasswordVisualTransformation()
         )
     }
 }
